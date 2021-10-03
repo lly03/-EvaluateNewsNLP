@@ -13,35 +13,35 @@
 //     })
 // }
 
-function handleSubmit(event) {
+async function handleSubmit(event) {
     event.preventDefault()
 
     // check what url was put into the form field
-    let formText = document.getElementById('name').value
-    console.log(formText);
-    Client.checkForName(formText)
+    let formText = document.getElementById('url').value
+    Client.checkForUrl(formText)
 
-    console.log('inside handleSubmit')
+    console.log("inside handleSubmit")
 
-    const postData = async (url='', data={}) =>{
-        const response = {
-        method:'POST', 
-        credentials: 'same-origin',
-        headers:{ 
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-        }
 
+    await fetch('/add', {
+        method:"POST", 
+        credentials: "same-origin",
+        mode: "cors",
+        headers:{ "Content-Type": "application/json"},
+        body: JSON.stringify({url: formText})
+    })
+    .then(res => res.json())
+    .then(result => {
         try{
-            const newData = await response.json();
-            document.getElementById('results').innerHTML = newData.subjectivity;
+            document.getElementById('agreement').innerHTML = result.agreement;
+            document.getElementById('subjectivity').innerHTML = result.subjectivity;
+            document.getElementById('confidence').innerHTML = `Confidence Rating: ${result.confidence}`;
+            document.getElementById('irony').innerHTML = result.irony;
         }catch(e){
-            console.log('error',e)
+            console.log("error", e);
         }
-    }
-
-    postData('/add',{name:formText})
+    })
+    .catch(e => console.log("error", e))
 }
 
 export { handleSubmit }
