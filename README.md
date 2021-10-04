@@ -34,7 +34,9 @@ To run the web application you can run:
 ````
 npm start
 ````
-in your terminal. Then in your browser, go to **localhost:8080** where your web app is at.
+in your terminal. Then in your browser, go to **localhost:8080** where your web app is at. Your web application should look like this and when you enter a url into the textbox it should retrieve you the analysis.
+
+<img src="https://user-images.githubusercontent.com/86360050/135783981-a4b74552-a391-4b4e-b9ed-82b0a50533f7.png" alt="screenshot of the NLP web app">
 
 ## Starter Code
 
