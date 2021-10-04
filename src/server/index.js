@@ -1,4 +1,4 @@
-var path = require('path')
+const path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 
@@ -43,11 +43,12 @@ console.log(`Your API key is ${process.env.API_KEY}`);
 
 //POST Method
 app.post('/add', async (req, res) => {
-    //fetch the data from the api url
+    //generates the api url, which we retrieve the url input from the handleSubmit 
     const data = req.body;
+    //it also fetches the url data
     const apiURL = await fetch(`${baseURL}?key=${apiKey}&url=${data.url}&lang=en`, {method : "POST"});
-
     console.log(`Input url: ${data.url}`)
+
     //try convert the url data into a json and send, otherwise catch the error
     try{
         const result = await apiURL.json();

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <title>NLP</title>
     </head>
 
     <body>
@@ -18,18 +18,21 @@
 
         <main>
             <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="url" type="text" name="url" value="" placeholder="Name">
+                <form class="form" onsubmit="return Client.handleSubmit(event)">
+                    <input id="url" type="text" name="url" value="" placeholder="Enter a url">
+                    <div id="false"></div>
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
 
             <section>
-                <strong>Form Results:</strong>
-                <div id="agreement"></div>
-                <div id="subjectivity"></div>
-                <div id="confidence"></div>
-                <div id="irony"></div>
+                <strong id="title">Sentiment Analysis Results:</strong>
+                <ul class="list">
+                    <li id="agreement"></li>
+                    <li id="subjectivity"></li>
+                    <li id="confidence"></li>
+                    <li id="irony"></li>
+                </ul>
             </section>
         </main>
 
@@ -37,5 +40,19 @@
             <p>This is a footer</p>
         </footer>
 
+        <script>
+            //Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    //registration was successful
+                    console.log('ServiceWorker registration is successful: ', registration.scope);
+                    }, function(err) {
+                    //registration failed 
+                    console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }
+           </script>
     </body>
 </html>

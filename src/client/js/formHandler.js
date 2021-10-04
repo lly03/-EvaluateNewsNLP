@@ -18,11 +18,16 @@ async function handleSubmit(event) {
 
     // check what url was put into the form field
     let formText = document.getElementById('url').value
-    Client.checkForUrl(formText)
+    Client.checkForUrl(formText);
 
-    console.log("inside handleSubmit")
+    console.log("We are inside handleSubmit.")
 
-
+    /**
+     * first fetches the POST method from server
+     * stringify the input into a "url", which is sent to server
+     * response (api data) that was sent from the POST method is turned into json
+     * input those data into html view
+     */
     await fetch('/add', {
         method:"POST", 
         credentials: "same-origin",
@@ -42,6 +47,7 @@ async function handleSubmit(event) {
         }
     })
     .catch(e => console.log("error", e))
+
 }
 
 export { handleSubmit }
