@@ -12,16 +12,15 @@ To use this app, you'll need to get an API from <a href="https://www.meaningclou
 API_KEY=**********
 ````
 
-Then you'll need to run 
+Then you'll need to run the following command line on your terminal, so it has all the required packages. It should create a node_modules folder, so make sure you have that.
 
 ````
 npm install
 ````
 
-on your terminal, so it has all the required packages. It should create a node_modules folder, so make sure you have that.
 <img src="https://user-images.githubusercontent.com/86360050/135783126-11fe9ea2-4e98-4b9c-83bf-1729c9f7a5cd.png" alt="screenshot of the node_modules folder">
 
-Afterwards in the terminal run the command
+Afterwards in the terminal, run the command:
 
 ````
 npm run build-prod
@@ -30,11 +29,11 @@ This command will create a dist folder that is in the same directory as your src
 
 <img src="https://user-images.githubusercontent.com/86360050/135783343-bb666adc-589d-42e8-bf2c-82e7ad83effb.png" alt="screenshot of the dist folder">
 
-To run the web application you can run:
+To run the web application you can run the following command line in your terminal.
 ````
 npm start
 ````
-in your terminal. Then in your browser, go to **localhost:8080** where your web app is at. Your web application should look like this and when you enter a url into the textbox it should retrieve you the analysis.
+Then in your browser, go to **localhost:8080** where your web app is at. Your web application should look like this and when you enter a url into the textbox it should retrieve you the analysis.
 
 <img src="https://user-images.githubusercontent.com/86360050/135783981-a4b74552-a391-4b4e-b9ed-82b0a50533f7.png" alt="screenshot of the NLP web app">
 
