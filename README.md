@@ -1,5 +1,7 @@
 # Evaluate News NLP
 
+## Project Description
+
 This project required me to implement an NLP API into a web application, while also applying webpack and other build tools onto it. The API that was used for this app is the <a href="https://www.meaningcloud.com/developer/sentiment-analysis">Open Sentiment Analysis (Meaning Cloud) API</a>.
 
 ## Usage
